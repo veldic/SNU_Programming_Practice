@@ -17,17 +17,18 @@ char* readline(char* str, int max_len) {
 
 int main(){
 
-    char a[3010], b[3010];
-    int lenA, lenB, count = 0;
-    int pos[3010];
-    
+    char a[1010], b[1010], c[1010];
+    int lenA, lenB, lenC, count = 0;
+    int pos[1010];
+    pos[0] = -1;
+
     scanf("%[^\n]%*c", a);
     scanf("%[^\n]%*c", b);
-    
+    scanf("%[^\n]%*c", c);
 
     lenA = strlen(a);
     lenB = strlen(b);
-
+    lenC = strlen(c);
 
     for(int i = 0; i <= lenA-lenB; i++)
     {
@@ -47,11 +48,23 @@ int main(){
             }
         }
     }
-    
-    printf("%s : %d\n", b, count);
-    for(int i = 0; i < count; i++)
+
+
+    int j = 0;
+    for(int i = 0; i < lenA; i++)
     {
-        printf("%d ", pos[i]);
+        if(i == pos[j] && pos[0] != -1)
+        {
+            printf("%s", c);
+            i+=lenB-1;
+            while(i >= pos[j] && j < count) {
+                j++;
+            }
+        }
+        else
+        {
+            printf("%c", a[i]);
+        }
     }
 
 
