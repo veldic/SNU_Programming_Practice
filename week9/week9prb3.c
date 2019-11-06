@@ -21,9 +21,7 @@ int main() {
 }
 
 double newton_method(double x0, double (*fp)(double), double (*dfp)(double)){
-    double x1 = x0-fp(x0)/dfp(x0);
-    if(x1-x0>=-0.000001&&x1-x0<=0.000001) return x1;
-    else return newton_method(x1, fp, dfp);
+    return fp(x0)/dfp(x0)>=-0.000001&&fp(x0)/dfp(x0)<=0.000001?x0-fp(x0)/dfp(x0):newton_method(x0-fp(x0)/dfp(x0), fp, dfp);
 }
 
 double f1(double x){

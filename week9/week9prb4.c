@@ -5,8 +5,8 @@
 int main(){
 
     char a[25010];
-    char str[510][51] = {0,}, index[510]={0,};
-    int len, word = 0;
+    char str[510][51] = {0,};
+    int len, word = 0, index[510]={0,};
     char *b[510];
 
     scanf("%[^\n]%*c", a);
@@ -57,9 +57,11 @@ int main(){
            {
                char *temp;
                int tmp;
+               
                temp = b[j];
                b[j] = b[j+1];
                b[j+1] = temp;
+
                tmp = index[j];
                index[j] = index[j+1];
                index[j+1] = tmp;
