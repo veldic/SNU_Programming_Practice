@@ -1,30 +1,30 @@
 #include <stdio.h>
 
-#define MAX 16
-
 int main(){
 
-    int a[MAX];
+    int a[4][4];
 
-    for(int i = 0; i < MAX; i++){
-        scanf("%d", &a[i]);
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            scanf("%d", &a[i][j]);
+        }
     }
 
     printf("-------------------------\n");
     printf("|     |     |     |     |\n");
-    printf("|%5d|%5d|%5d|%5d|\n", a[0], a[1], a[2], a[3]);
+    printf("|%5d|%5d|%5d|%5d|\n", a[0][0], a[0][1], a[0][2], a[0][3]);
     printf("|     |     |     |     |\n");
     printf("-------------------------\n");
     printf("|     |     |     |     |\n");
-    printf("|%5d|%5d|%5d|%5d|\n", a[4], a[5], a[6], a[7]);
+    printf("|%5d|%5d|%5d|%5d|\n", a[1][0], a[1][1], a[1][2], a[1][3]);
     printf("|     |     |     |     |\n");
     printf("-------------------------\n");
     printf("|     |     |     |     |\n");
-    printf("|%5d|%5d|%5d|%5d|\n", a[8], a[9], a[10], a[11]);
+    printf("|%5d|%5d|%5d|%5d|\n", a[2][0], a[2][1], a[2][2], a[2][3]);
     printf("|     |     |     |     |\n");
     printf("-------------------------\n");
     printf("|     |     |     |     |\n");
-    printf("|%5d|%5d|%5d|%5d|\n", a[12], a[13], a[14], a[15]);
+    printf("|%5d|%5d|%5d|%5d|\n", a[3][0], a[3][1], a[3][2], a[3][3]);
     printf("|     |     |     |     |\n");
     printf("-------------------------\n");
 
